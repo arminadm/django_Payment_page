@@ -4,7 +4,7 @@ from django.db import models
 class Customers(models.Model):
     name = models.CharField(null=False, blank=False, max_length=50)
     lastname = models.CharField(null=False, blank=False, max_length=50)
-    address = models.TextField(null=False, blank=False,)
+    address = models.TextField(null=False, blank=False)
     phone = models.IntegerField(null=False, blank=False, unique=True)
     email = models.EmailField(null=False, blank=False, unique=True)
     created_date = models.DateTimeField(auto_now_add=True)
