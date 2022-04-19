@@ -18,12 +18,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from azbankgateways.urls import az_bank_gateways_urls
-from bank.views import go_to_gateway_view
+from bank.views import go_to_gateway_view, callback_gateway_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('paymentAndForm.urls')),
     path('bankgateways/', az_bank_gateways_urls()),
+    path('callback-gateway/', callback_gateway_view),
     path('go-to-gate-way/', go_to_gateway_view),
     path('captcha/', include('captcha.urls')),
 ]
