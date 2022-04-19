@@ -17,10 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from azbankgateways.urls import az_bank_gateways_urls
+from bank.views import go_to_gateway_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('paymentAndForm.urls')),
+    path('bankgateways/', az_bank_gateways_urls()),
+    path('go-to-gate-way/', go_to_gateway_view),
     path('captcha/', include('captcha.urls')),
 ]
 
